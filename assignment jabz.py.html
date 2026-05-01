@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>assignment jabz.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #cf8e6d;}
+.s5 { color: #5f826b; font-style: italic;}
+.s6 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+assignment jabz.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># =================================================================</span>
+<span class="s0"># PROGRAM: Student Result Management Terminal System (SRMTS)</span>
+<span class="s0"># FACULTY: Information and Communication Technology</span>
+<span class="s0"># STUDENT: Yusufu jabbie</span>
+<span class="s0"># DATE: April 2026</span>
+<span class="s0"># =================================================================</span>
+
+<span class="s0"># Global Constant for Student ID prefix [cite: 77, 156]</span>
+<span class="s1">ID_PREFIX </span><span class="s2">= </span><span class="s3">&quot;905005292&quot;</span>
+
+
+<span class="s4">def </span><span class="s1">get_grade_point</span><span class="s2">(</span><span class="s1">score</span><span class="s2">):</span>
+    <span class="s5">&quot;&quot;&quot; 
+    Module 1: Logic processing for grade points[cite: 69, 81]. 
+    Converts a numerical score into a standard 4.0 scale point. 
+    &quot;&quot;&quot;</span>
+    <span class="s4">if </span><span class="s1">score </span><span class="s2">&gt;= </span><span class="s6">70</span><span class="s2">:</span>
+        <span class="s4">return </span><span class="s6">4.0  </span><span class="s0"># A grade</span>
+    <span class="s4">elif </span><span class="s1">score </span><span class="s2">&gt;= </span><span class="s6">60</span><span class="s2">:</span>
+        <span class="s4">return </span><span class="s6">3.0  </span><span class="s0"># B grade</span>
+    <span class="s4">elif </span><span class="s1">score </span><span class="s2">&gt;= </span><span class="s6">50</span><span class="s2">:</span>
+        <span class="s4">return </span><span class="s6">2.0  </span><span class="s0"># C grade</span>
+    <span class="s4">elif </span><span class="s1">score </span><span class="s2">&gt;= </span><span class="s6">45</span><span class="s2">:</span>
+        <span class="s4">return </span><span class="s6">1.0  </span><span class="s0"># D grade</span>
+    <span class="s4">else</span><span class="s2">:</span>
+        <span class="s4">return </span><span class="s6">0.0  </span><span class="s0"># F grade</span>
+
+
+<span class="s4">def </span><span class="s1">calculate_final_gpa</span><span class="s2">(</span><span class="s1">total_points</span><span class="s2">, </span><span class="s1">count</span><span class="s2">):</span>
+    <span class="s5">&quot;&quot;&quot; 
+    Module 2: Calculations for student GPA[cite: 66, 69]. 
+    Divides total grade points by the number of subjects. 
+    &quot;&quot;&quot;</span>
+    <span class="s4">if </span><span class="s1">count </span><span class="s2">== </span><span class="s6">0</span><span class="s2">: </span><span class="s4">return </span><span class="s6">0.0</span>
+    <span class="s4">return </span><span class="s1">round</span><span class="s2">(</span><span class="s1">total_points </span><span class="s2">/ </span><span class="s1">count</span><span class="s2">, </span><span class="s6">2</span><span class="s2">)</span>
+
+
+<span class="s4">def </span><span class="s1">check_subject_performance</span><span class="s2">(</span><span class="s1">score</span><span class="s2">):</span>
+    <span class="s5">&quot;&quot;&quot; 
+    Module 3: Decision structure for subject status[cite: 67, 79]. 
+    Returns 'PASS' if the score is 50 or above, otherwise 'FAIL'. 
+    &quot;&quot;&quot;</span>
+    <span class="s4">return </span><span class="s3">&quot;PASS&quot; </span><span class="s4">if </span><span class="s1">score </span><span class="s2">&gt;= </span><span class="s6">50 </span><span class="s4">else </span><span class="s3">&quot;FAIL&quot;</span>
+
+
+<span class="s4">def </span><span class="s1">display_report</span><span class="s2">(</span><span class="s1">name</span><span class="s2">, </span><span class="s1">course</span><span class="s2">, </span><span class="s1">full_id</span><span class="s2">, </span><span class="s1">subject_data</span><span class="s2">, </span><span class="s1">gpa</span><span class="s2">):</span>
+    <span class="s5">&quot;&quot;&quot; 
+    Module 4: Formatted output for the terminal UI[cite: 71, 74]. 
+    Prints the final academic report including the new Course section. 
+    &quot;&quot;&quot;</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s4">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;=&quot; </span><span class="s2">* </span><span class="s6">70</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;OFFICIAL ACADEMIC REPORT: </span><span class="s4">{</span><span class="s1">name</span><span class="s2">.</span><span class="s1">upper</span><span class="s2">()</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;COURSE: </span><span class="s4">{</span><span class="s1">course</span><span class="s2">.</span><span class="s1">upper</span><span class="s2">()</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)  </span><span class="s0"># New Course Section</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;STUDENT ID: </span><span class="s4">{</span><span class="s1">full_id</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;-&quot; </span><span class="s2">* </span><span class="s6">70</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;</span><span class="s4">{</span><span class="s3">'SUBJECT'</span><span class="s4">:</span><span class="s3">&lt;30</span><span class="s4">} </span><span class="s3">| </span><span class="s4">{</span><span class="s3">'SCORE'</span><span class="s4">:</span><span class="s3">&lt;10</span><span class="s4">} </span><span class="s3">| </span><span class="s4">{</span><span class="s3">'PERFORMANCE'</span><span class="s4">:</span><span class="s3">&lt;10</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;-&quot; </span><span class="s2">* </span><span class="s6">70</span><span class="s2">)</span>
+
+    <span class="s0"># Loop through the results to print each module's data [cite: 68, 80]</span>
+    <span class="s4">for </span><span class="s1">sub</span><span class="s2">, </span><span class="s1">sc</span><span class="s2">, </span><span class="s1">perf </span><span class="s4">in </span><span class="s1">subject_data</span><span class="s2">:</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;</span><span class="s4">{</span><span class="s1">sub</span><span class="s4">:</span><span class="s3">&lt;30</span><span class="s4">} </span><span class="s3">| </span><span class="s4">{</span><span class="s1">sc</span><span class="s4">:</span><span class="s3">&lt;10</span><span class="s4">} </span><span class="s3">| </span><span class="s4">{</span><span class="s1">perf</span><span class="s4">:</span><span class="s3">&lt;10</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)</span>
+
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;-&quot; </span><span class="s2">* </span><span class="s6">70</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">f&quot;FINAL CALCULATED GPA: </span><span class="s4">{</span><span class="s1">gpa</span><span class="s4">}</span><span class="s3">&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;=&quot; </span><span class="s2">* </span><span class="s6">70</span><span class="s2">)</span>
+
+
+<span class="s4">def </span><span class="s1">main_registration</span><span class="s2">():</span>
+    <span class="s5">&quot;&quot;&quot; 
+    Module 5: Main application loop for data collection[cite: 62, 64]. 
+    Handles user prompts for Name, Course, ID, and Grades. 
+    &quot;&quot;&quot;</span>
+    <span class="s0"># Specific ICT subjects as requested</span>
+    <span class="s1">subject_list </span><span class="s2">= [</span>
+        <span class="s3">&quot;Principle of structured Programming&quot;</span><span class="s2">,</span>
+        <span class="s3">&quot;Introduction to Databas&quot;</span><span class="s2">,</span>
+        <span class="s3">&quot;Introduction to Data communication&quot;</span><span class="s2">,</span>
+        <span class="s3">&quot;Software Engineering&quot;</span><span class="s2">,</span>
+        <span class="s3">&quot;Computerized mathematics&quot;</span><span class="s2">,</span>
+    <span class="s2">]</span>
+
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;--- LIMKOKWING SRMTS TERMINAL SYSTEM ---&quot;</span><span class="s2">)</span>
+
+    <span class="s0"># Input Section [cite: 61, 63]</span>
+    <span class="s1">name </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">&quot;Enter Full Name: &quot;</span><span class="s2">)</span>
+    <span class="s1">course </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">&quot;Enter Course Name (e.g., BSc in Software Engineering): &quot;</span><span class="s2">)</span>
+
+    <span class="s0"># ID Validation loop for constant prefix and 4-digit suffix [cite: 68, 77]</span>
+    <span class="s4">while True</span><span class="s2">:</span>
+        <span class="s1">id_suffix </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">f&quot;Enter the last 4 digits of ID (</span><span class="s4">{</span><span class="s1">ID_PREFIX</span><span class="s4">}</span><span class="s3">xxxx): &quot;</span><span class="s2">)</span>
+        <span class="s4">if </span><span class="s1">len</span><span class="s2">(</span><span class="s1">id_suffix</span><span class="s2">) == </span><span class="s6">4 </span><span class="s4">and </span><span class="s1">id_suffix</span><span class="s2">.</span><span class="s1">isdigit</span><span class="s2">():</span>
+            <span class="s1">full_id </span><span class="s2">= </span><span class="s1">ID_PREFIX </span><span class="s2">+ </span><span class="s1">id_suffix</span>
+            <span class="s4">break</span>
+        <span class="s4">else</span><span class="s2">:</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Error: Identification must be exactly 4 numbers.&quot;</span><span class="s2">)</span>
+
+    <span class="s1">total_gp </span><span class="s2">= </span><span class="s6">0</span>
+    <span class="s1">performance_records </span><span class="s2">= []</span>
+
+    <span class="s0"># Iteration through subjects to collect grades [cite: 68, 80]</span>
+    <span class="s4">for </span><span class="s1">subject </span><span class="s4">in </span><span class="s1">subject_list</span><span class="s2">:</span>
+        <span class="s4">try</span><span class="s2">:</span>
+            <span class="s1">mark </span><span class="s2">= </span><span class="s1">float</span><span class="s2">(</span><span class="s1">input</span><span class="s2">(</span><span class="s3">f&quot;Enter score for </span><span class="s4">{</span><span class="s1">subject</span><span class="s4">}</span><span class="s3">: &quot;</span><span class="s2">))</span>
+
+            <span class="s0"># Process performance and points using separate modules [cite: 81]</span>
+            <span class="s1">perf_status </span><span class="s2">= </span><span class="s1">check_subject_performance</span><span class="s2">(</span><span class="s1">mark</span><span class="s2">)</span>
+            <span class="s1">total_gp </span><span class="s2">+= </span><span class="s1">get_grade_point</span><span class="s2">(</span><span class="s1">mark</span><span class="s2">)</span>
+
+            <span class="s0"># Save record in a list [cite: 78]</span>
+            <span class="s1">performance_records</span><span class="s2">.</span><span class="s1">append</span><span class="s2">((</span><span class="s1">subject</span><span class="s2">, </span><span class="s1">mark</span><span class="s2">, </span><span class="s1">perf_status</span><span class="s2">))</span>
+
+        <span class="s4">except </span><span class="s1">ValueError</span><span class="s2">:</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Invalid input. Recording 0 for this module.&quot;</span><span class="s2">)</span>
+            <span class="s1">performance_records</span><span class="s2">.</span><span class="s1">append</span><span class="s2">((</span><span class="s1">subject</span><span class="s2">, </span><span class="s6">0.0</span><span class="s2">, </span><span class="s3">&quot;FAIL&quot;</span><span class="s2">))</span>
+
+    <span class="s0"># Final GPA processing [cite: 66]</span>
+    <span class="s1">final_gpa </span><span class="s2">= </span><span class="s1">calculate_final_gpa</span><span class="s2">(</span><span class="s1">total_gp</span><span class="s2">, </span><span class="s1">len</span><span class="s2">(</span><span class="s1">subject_list</span><span class="s2">))</span>
+
+    <span class="s0"># Trigger final output display [cite: 70]</span>
+    <span class="s1">display_report</span><span class="s2">(</span><span class="s1">name</span><span class="s2">, </span><span class="s1">course</span><span class="s2">, </span><span class="s1">full_id</span><span class="s2">, </span><span class="s1">performance_records</span><span class="s2">, </span><span class="s1">final_gpa</span><span class="s2">)</span>
+
+
+<span class="s0"># Script entry point</span>
+<span class="s4">if </span><span class="s1">__name__ </span><span class="s2">== </span><span class="s3">&quot;__main__&quot;</span><span class="s2">:</span>
+    <span class="s1">main_registration</span><span class="s2">()</span></pre>
+</body>
+</html>
