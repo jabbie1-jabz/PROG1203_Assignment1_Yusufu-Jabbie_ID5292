@@ -2,7 +2,7 @@
 
 ## Student Information
 Name: Yusufu Jabbie  
-Course: BSEM  
+Course: BSEM 1203 
 Student ID: 9050052925292  
 
 ## Project Description
